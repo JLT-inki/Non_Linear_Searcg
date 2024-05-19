@@ -34,7 +34,7 @@ class Point:
 
     """
 
-    def __init__(self, x_value: int, y_value: int) -> None:
+    def __init__(self, x_value: float, y_value: float) -> None:
         """
         Construct one point with the given parameters.
 
@@ -124,16 +124,25 @@ class Point:
                  (point_1.get_y_value() - point_2.get_y_value()) ** 2
                  ) ** .5 <= distance)
 
-    def apply_vector(self, vector: Vector) -> None:
+    def apply_vector(self, vector: Vector, factor: float) -> Point:
         """
         Move a point according to a vector.
 
         Parameters
         ----------
         vector: Vector
-            Vector that is moved by.
+            Vector that the point is moved by
+        factor: float
+            Factor by which the point shall be moved by the vector.
+
+        Returns
+        -------
+        Point
+            New point after the movement.
 
         """
         # Apply the change to the X and Y variable
-        self.set_x_value(self.get_x_value() + vector.get_x_value())
-        self.set_y_value(self.get_y_value() + vector.get_y_value())
+        x_value: float = self.get_x_value() + vector.get_x_value() * factor
+        y_value: float = self.get_y_value() + vector.get_y_value() * factor
+
+        return Point(x_value, y_value)

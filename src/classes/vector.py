@@ -21,6 +21,10 @@ class Vector:
         Return the X value of the vector.
     get_y_value
         Return the X value of the vector.
+    normalize
+        Normalize the vector, aka making its length equal to 1.
+    negate_values
+        Negate all the values of the vector.
 
     """
 
@@ -86,3 +90,17 @@ class Vector:
 
         """
         return self.y_value
+
+    def normalize(self) -> None:
+        """Normalize the vector, aka making its length equal to 1."""
+        # Calculate the factor to normalize the vector
+        factor: float = (self.get_x_value() ** 2 + self.get_y_value() ** 2) ** .5
+
+        # Apply the factor to all elements of the vector
+        self.set_x_value(self.get_x_value() * factor)
+        self.set_y_value(self.get_y_value() * factor)
+
+    def negate_values(self) -> None:
+        """Negate all the values of the vector."""
+        self.set_x_value(-1 * self.get_x_value())
+        self.set_y_value(-1 * self.get_y_value())
