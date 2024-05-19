@@ -1,22 +1,19 @@
-"""File containing the class for the (hard coded) Function 2."""
+"""File containing the class for the (hard coded) Function 1."""
 
 # Import for overwritting methods
 from typing import override
-
-# Import trigonometric functions
-from math import sin, cos, radians
 
 # Import used classes
 from classes.function import Function
 from classes.vector import Vector
 from classes.point import Point
 
-class Function2(Function):
+class Function1(Function):
     """
-    Function 2 of this project.
+    Function 1 of this project.
 
     The function is defined as follows:
-    sin(x^2 + y) - cos(y^2 - x)
+    (x + 5) * (x + 1) * (x - 2) * (x + 4) * x * (y - 1) * (y + 2) * (y - 3) * (y + 5)
 
     Attributes
     ----------
@@ -36,7 +33,7 @@ class Function2(Function):
 
     """
 
-    def __init__(self, intervals: list[Point]) -> None:
+    def __init__(self, intervals: list[tuple[int, int]]) -> None:
         """
         Construct one object of the second function with the given parameters.
 
@@ -91,7 +88,9 @@ class Function2(Function):
             Value of the function at the specified point.
 
         """
-        return sin(x_value ** 2 + y_value) - cos(y_value ** 2 - x_value)
+        return (
+            (x_value + 5) * (x_value + 1) * (x_value - 2) * (x_value + 4) * x_value *
+            (y_value - 1) * (y_value + 2) * (y_value - 3) * (y_value + 5))
 
     @override(Function.get_gradient)
     def get_gradient(self, x_value: float, y_value: float) -> Vector:
@@ -112,7 +111,8 @@ class Function2(Function):
 
         """
         return Vector(
-            2 * x_value * cos(radians(x_value ** 2 + y_value)) -
-            sin(radians(y_value ** 2 - x_value)),
-            2 * y_value * sin(radians(y_value ** 2 - x_value)) +
-            cos(radians(x_value ** 2 + y_value)))
+            (y_value - 1) * (y_value + 2) * (y_value - 3) * (y_value + 5) *
+            (5 * x_value ** 4 + 32 * x_value ** 3 + 27 * x_value ** 2 -
+             76 * x_value - 40),
+            x_value * (x_value + 5) * (x_value + 1) * (x_value - 2) * (x_value + 4) *
+            (4 * y_value ** 3 + 9 * y_value ** 2 - 30 * y_value - 19))
