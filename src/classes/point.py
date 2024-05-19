@@ -1,7 +1,10 @@
-"""File containing the point class."""
+"""File containing the class Point."""
 
 # Import for points_are_in_range method
 from __future__ import annotations
+
+# Import used class
+from classes.vector import Vector
 
 class Point:
     """
@@ -16,7 +19,18 @@ class Point:
 
     Methods
     -------
-    TBD
+    set_x_value
+        Set the X value of the point.
+    set_y_value
+        Set the Y value of the point.
+    get_x_value
+        Return the X value of the point.
+    get_y_value
+        Return the X value of the point.
+    points_are_in_range
+        Check if two points are within a specific range of each other.
+    apply_vector
+        Move a point according to a vector.
 
     """
 
@@ -109,3 +123,17 @@ class Point:
         return (((point_1.get_x_value() - point_2.get_x_value()) ** 2 +
                  (point_1.get_y_value() - point_2.get_y_value()) ** 2
                  ) ** .5 <= distance)
+
+    def apply_vector(self, vector: Vector) -> None:
+        """
+        Move a point according to a vector.
+
+        Parameters
+        ----------
+        vector: Vector
+            Vector that is moved by.
+
+        """
+        # Apply the change to the X and Y variable
+        self.set_x_value(self.get_x_value() + vector.get_x_value())
+        self.set_y_value(self.get_y_value() + vector.get_y_value())
