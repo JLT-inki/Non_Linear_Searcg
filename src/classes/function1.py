@@ -1,7 +1,5 @@
 """File containing the class for the (hard coded) Function 1."""
 
-# Import for overwritting methods
-from typing import override
 
 # Import used classes
 from classes.function import Function
@@ -33,7 +31,7 @@ class Function1(Function):
 
     """
 
-    def __init__(self, intervals: list[tuple[int, int]]) -> None:
+    def __init__(self, intervals: list[Point]) -> None:
         """
         Construct one object of the second function with the given parameters.
 
@@ -46,7 +44,7 @@ class Function1(Function):
         super().__init__()
         self.set_intervals(intervals)
 
-    def set_intervals(self, intervals: list[tuple[int, int]]) -> None:
+    def set_intervals(self, intervals: list[Point]) -> None:
         """
         Set the intervals of the function.
 
@@ -56,9 +54,9 @@ class Function1(Function):
             The two corner points of the interval of the function.
 
         """
-        self.intervals: list[tuple[int, int]] = intervals
+        self.intervals: list[Point] = intervals
 
-    def get_intervals(self) -> list[tuple[int, int]]:
+    def get_intervals(self) -> list[Point]:
         """
         Return the intervals of the function.
 
@@ -70,7 +68,6 @@ class Function1(Function):
         """
         return self.intervals
 
-    @override(Function.get_value)
     def get_value(self, x_value: float, y_value: float) -> float:
         """
         Calculate the value of a two dimensional function at a point.
@@ -92,7 +89,6 @@ class Function1(Function):
             (x_value + 5) * (x_value + 1) * (x_value - 2) * (x_value + 4) * x_value *
             (y_value - 1) * (y_value + 2) * (y_value - 3) * (y_value + 5))
 
-    @override(Function.get_gradient)
     def get_gradient(self, x_value: float, y_value: float) -> Vector:
         """
         Get the value of the gradient at a specified point.

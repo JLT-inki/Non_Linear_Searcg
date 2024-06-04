@@ -1,8 +1,5 @@
 """File containing the class for the (hard coded) Function 2."""
 
-# Import for overwritting methods
-from typing import override
-
 # Import trigonometric functions
 from math import sin, cos, radians
 
@@ -49,7 +46,7 @@ class Function2(Function):
         super().__init__()
         self.set_intervals(intervals)
 
-    def set_intervals(self, intervals: list[tuple[int, int]]) -> None:
+    def set_intervals(self, intervals: list[Point]) -> None:
         """
         Set the intervals of the function.
 
@@ -59,9 +56,9 @@ class Function2(Function):
             The two corner points of the interval of the function.
 
         """
-        self.intervals: list[tuple[int, int]] = intervals
+        self.intervals: list[Point] = intervals
 
-    def get_intervals(self) -> list[tuple[int, int]]:
+    def get_intervals(self) -> list[Point]:
         """
         Return the intervals of the function.
 
@@ -73,7 +70,6 @@ class Function2(Function):
         """
         return self.intervals
 
-    @override(Function.get_value)
     def get_value(self, x_value: float, y_value: float) -> float:
         """
         Calculate the value of a two dimensional function at a point.
@@ -93,7 +89,6 @@ class Function2(Function):
         """
         return sin(x_value ** 2 + y_value) - cos(y_value ** 2 - x_value)
 
-    @override(Function.get_gradient)
     def get_gradient(self, x_value: float, y_value: float) -> Vector:
         """
         Get the value of the gradient at a specified point.
