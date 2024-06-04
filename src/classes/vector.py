@@ -53,7 +53,7 @@ class Vector:
             X value of the vector.
 
         """
-        self.x_value: float = x_value
+        self.__x_value: float = x_value
 
     def set_y_value(self, y_value: float) -> None:
         """
@@ -65,7 +65,7 @@ class Vector:
             Y value of the vector.
 
         """
-        self.y_value: float = y_value
+        self.__y_value: float = y_value
 
     def get_x_value(self) -> float:
         """
@@ -77,7 +77,7 @@ class Vector:
             X value of the vector.
 
         """
-        return self.x_value
+        return self.__x_value
 
     def get_y_value(self) -> float:
         """
@@ -89,7 +89,7 @@ class Vector:
             Y value of the vector.
 
         """
-        return self.y_value
+        return self.__y_value
 
     def normalize(self) -> None:
         """Normalize the vector, aka making its length equal to 1."""

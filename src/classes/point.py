@@ -59,7 +59,7 @@ class Point:
             X value of the point.
 
         """
-        self.x_value: float = x_value
+        self.__x_value: float = x_value
 
     def set_y_value(self, y_value: float) -> None:
         """
@@ -71,7 +71,7 @@ class Point:
             Y value of the point.
 
         """
-        self.y_value: float = y_value
+        self.__y_value: float = y_value
 
     def get_x_value(self) -> float:
         """
@@ -83,7 +83,7 @@ class Point:
             X value of the point.
 
         """
-        return self.x_value
+        return self.__x_value
 
     def get_y_value(self) -> float:
         """
@@ -95,7 +95,7 @@ class Point:
             Y value of the point.
 
         """
-        return self.y_value
+        return self.__y_value
 
     @staticmethod
     def points_are_in_range(point_1: Point, point_2: Point, distance: float) -> bool:

@@ -54,7 +54,7 @@ class Function1(Function):
             The two corner points of the interval of the function.
 
         """
-        self.intervals: list[Point] = intervals
+        self.__intervals: list[Point] = intervals
 
     def get_intervals(self) -> list[Point]:
         """
@@ -66,7 +66,7 @@ class Function1(Function):
             The two corner points of the interval of the function.
 
         """
-        return self.intervals
+        return self.__intervals
 
     def get_value(self, x_value: float, y_value: float) -> float:
         """
