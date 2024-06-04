@@ -54,11 +54,11 @@ _+ get_fibonacci_number(number: int): int_
 + get_x_value(): float
 + get_y_value(): float
 _+ points_are_in_range(point_1: point, point_2: Point, distance: float): boolean_
-+ apply_vector(vector: Vector, factor: Float): Point</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>595</x><y>427</y><w>119</w><h>35</h></coordinates><panel_attributes>lt=-x
++ apply_vector(vector: Vector, factor: float): Point</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>595</x><y>427</y><w>119</w><h>35</h></coordinates><panel_attributes>lt=-x
 &lt; Uses
 m2=*
 </panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>Relation</id><coordinates><x>595</x><y>287</y><w>28</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
-m1=*</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>Relation</id><coordinates><x>1057</x><y>427</y><w>133</w><h>35</h></coordinates><panel_attributes>lt=-
+m1=*</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>Relation</id><coordinates><x>1057</x><y>427</y><w>133</w><h>35</h></coordinates><panel_attributes>lt=x-
 m1=*
 Creates &gt;</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1169</x><y>280</y><w>28</w><h>175</h></coordinates><panel_attributes>lt=&lt;-
 m1=*</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>847</x><y>217</y><w>224</w><h>35</h></coordinates><panel_attributes>lt=&lt;-x
