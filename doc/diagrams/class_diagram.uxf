@@ -1,4 +1,5 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>700</x><y>392</y><w>364</w><h>91</h></coordinates><panel_attributes>*/Function/*
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>700</x><y>392</y><w>364</w><h>91</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+*/Function/*
 --
 --
 /+ get_value(x_value: float, y_value: float): float/
