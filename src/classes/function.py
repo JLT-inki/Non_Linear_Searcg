@@ -190,7 +190,7 @@ class Function(ABC):
                 )
 
         # Initialize the borders for the search as the interval of the function
-        borders: tuple[int] = (0, number_of_intervals)
+        borders: tuple[int, int] = (0, number_of_intervals)
 
         # Initialize the right point
         point_right: int = number_of_intervals - point_left
