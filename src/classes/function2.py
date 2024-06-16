@@ -87,7 +87,8 @@ class Function2(Function):
             Value of the function at the specified point.
 
         """
-        return sin(x_value ** 2 + y_value) - cos(y_value ** 2 - x_value)
+        return (sin(radians(x_value ** 2 + y_value)) -
+                cos(radians(y_value ** 2 - x_value)))
 
     def get_gradient(self, x_value: float, y_value: float) -> Vector:
         """
