@@ -245,20 +245,17 @@ class Function(ABC):
         # Initialize the last determined point as the starting point
         last_point: Point = starting_point
 
-        # initialize the boolean indicating which variable shall be constant
-        x_constant: bool = True
-
         # Determine new points until two consecutive points are in range of one another
         while True:
+            # FInd the minimum on both the X and the Y scale
             determined_point: Point = self.fibonacci_search(
-                number_of_steps, x_constant, last_point)
+                number_of_steps, False, last_point)
+            determined_point: Point = self.fibonacci_search(
+                number_of_steps, True, determined_point)
 
             # Break the loop if two points are in range to one another
             if Point.points_are_in_range(last_point, determined_point, distance):
                 break
-
-            # Negate the boolean indicating which variable shall be constant
-            x_constant = not x_constant
 
             # Update the last visited point
             last_point = determined_point
