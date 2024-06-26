@@ -116,8 +116,21 @@ class Function(ABC):
         # Initialize the last determined point as the starting point
         last_point: Point = starting_point
 
+        # Threshold to reduce the factor
+        threshold: int = int(1 / distance)
+
+        # Ensure that the threshold is at least 10
+        threshold = threshold if threshold > 10 else 10
+
+        # Counter checking if the threshold is passed
+        count: int = 0
+
         # Determine new points until two consecutive points are in range of one another
         while True:
+            # Check if the threshold has been passed
+            if count % threshold == 0 and count != 0:
+                factor /= 10
+
             # Determine the gradient at the current position
             gradient: Vector = self.get_gradient(
                 last_point.get_x_value(), last_point.get_y_value())
@@ -137,6 +150,9 @@ class Function(ABC):
 
             # Set the last determined point and continue the determination
             last_point = determined_point
+
+            # Increment the counter that checks for the threshold
+            count += 1
 
         return determined_point
 
